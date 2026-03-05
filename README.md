@@ -134,15 +134,13 @@ Install CPU Hardware Codecs:
   ```sh
   sudo dnf -y swap mesa-va-drivers mesa-va-drivers-freeworld
   sudo dnf -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-  sudo dnf -y swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
-  sudo dnf -y swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
   ```
 
 Install **NVIDIA GPU** Hardware Codecs:
 > [!NOTE]
 > Only install this driver if your PC has an **NVIDIA GPU**.
 ```sh
-sudo dnf -y install libva-nvidia-driver.{i686,x86_64}
+sudo dnf -y install libva-nvidia-driver
 ```
 
 Enable **OpenH264** for Firefox
