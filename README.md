@@ -31,6 +31,14 @@ Update `flatpak` packages:
 flatpak -y update
 ```
 
+Update the **Firmware**:
+```sh
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-devices
+sudo fwupdmgr get-updates
+sudo fwupdmgr update
+```
+
 ---
 
 ## 3. 📟 Install Nvidia Driver
@@ -104,7 +112,7 @@ sudo grubby --update-kernel=ALL --args="nvidia-drm.modeset=1"
 
 ---
 
-## 4. 🎬 Install Codecs
+## 4. 🎬 Install Codecs and HW Video Acceleration
 
 Install full **ffmpeg** and Additional Codecs:
 ```sh
@@ -141,6 +149,14 @@ Install **NVIDIA GPU** Hardware Codecs:
 ```sh
 sudo dnf -y install libva-nvidia-driver.{i686,x86_64}
 ```
+
+Enable **OpenH264** for Firefox
+```sh
+sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+```
+> [!IMPORTANT]
+> After this enable the **OpenH264** Plugin in: [**Firefox's settings**](about:addons) -> **Plugins**.
 
 ---
 
