@@ -191,7 +191,6 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface accent-color 'slate'
 
 # Set Background to the dynamic version of f42 background:
-
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/f42/default/f42.xml'
 gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/backgrounds/f42/default/f42.xml'
 
@@ -212,7 +211,7 @@ sudo nmcli con up "$(nmcli -g NAME con show --active | head -1)"
 ```
 
 Edit the Device Name (also called hostname):
-> [!WARNING]
+> [!IMPORTANT]
 > Insert a valid `<hostname>`.
 ```sh
 sudo hostnamectl set-hostname "<hostname>"
@@ -279,13 +278,11 @@ Copy the SSH key and [add it to GitHub](https://github.com/settings/ssh/new).
 # Install Oh My Zsh:
 CHSH=no RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattended
 chsh -s $(which zsh)
-zsh
 
-# install .zsh_functions:
+# Install .zsh_functions:
 git clone git@github.com:antoniopelusi/.zsh_functions.git ~/.zsh_functions
 cd ~/.zsh_functions
 make install
-source ~/.zshrc
 cd -
 ```
 > [!TIP]
@@ -385,7 +382,7 @@ Enable `Dark Reader` Extension for JupyterLab.
 
 ---
 
-## 9. 🔁 Cleanup and Final Reboot
+## 6. 🔁 Cleanup and Final Reboot
 
 ```sh
 # Cleanup unused dependencies:
