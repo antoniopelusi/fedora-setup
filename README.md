@@ -16,6 +16,13 @@ Enable **Flathub** Third Party Repositories:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
+Update **AppStream** metadata:
+[!NOTE]
+Updates AppStream metadata for RPM Fusion, so packages appear correctly in **Gnome Software**.
+```sh
+sudo dnf -y group upgrade core
+```
+
 ---
 
 ## 2. 🔄 Update the System
@@ -164,9 +171,8 @@ Install `dnf` packages:
 ```sh
 sudo dnf -y install \
   zsh vim-enhanced gcc-c++ python3-pip fuse-libs pandoc fastfetch 7zip-standalone-all \
-  thunderbird chromium transmission inkscape audacity jupyterlab \
-  gnome-extensions-app gnome-tweaks papirus-icon-theme f42-backgrounds-gnome gpaste gnome-shell-extension-gpaste \
-  texstudio texlive-scheme-medium texlive-collection-mathscience texlive-collection-latexextra texlive-collection-bibtexextra texlive-collection-fontsrecommended texlive-collection-publishers
+  thunderbird chromium transmission inkscape audacity jupyterlab texstudio texlive-scheme-full \
+  gnome-extensions-app gnome-tweaks papirus-icon-theme f42-backgrounds-gnome gpaste gnome-shell-extension-gpaste
 ```
 
 Install `flatpak` packages:
