@@ -350,7 +350,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 Install **papirus-folders** and apply the `bluegrey` folder color to `Papirus-Dark` icon theme:
 ```sh
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/install.sh | sh
 papirus-folders -C bluegrey --theme Papirus-Dark
 ```
 
