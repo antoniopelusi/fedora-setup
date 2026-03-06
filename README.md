@@ -158,7 +158,7 @@ After this enable the **OpenH264** Plugin in Firefox's settings: [**about:addons
 
 ---
 
-## 6. 📦 Install Personal Packages
+## 5. 📦 Install Personal Packages
 
 Install `dnf` packages:
 ```sh
@@ -166,7 +166,7 @@ sudo dnf -y install \
   zsh vim-enhanced gcc-c++ python3-pip fuse-libs pandoc fastfetch 7zip-standalone-all \
   thunderbird chromium transmission inkscape audacity jupyterlab \
   gnome-extensions-app gnome-tweaks papirus-icon-theme f42-backgrounds-gnome gpaste gnome-shell-extension-gpaste \
-  texlive-scheme-medium texlive-collection-mathscience texlive-collection-latexextra texlive-collection-bibtexextra texlive-collection-fontsrecommended texlive-collection-publishers
+  texstudio texlive-scheme-medium texlive-collection-mathscience texlive-collection-latexextra texlive-collection-bibtexextra texlive-collection-fontsrecommended texlive-collection-publishers
 ```
 
 Install `flatpak` packages:
@@ -176,9 +176,9 @@ flatpak -y install flathub dev.zed.Zed
 
 ---
 
-## 7. 💻 OS Configuration
+## 6. 💻 OS Configuration
 
-### 7.1 📥 Get the files
+### 6.1 📥 Get the files
 
 Download the required files:
 ```sh
@@ -188,7 +188,7 @@ curl -L \
   https://raw.githubusercontent.com/antoniopelusi/fedora-setup/main/files/toolstab.config.json -o ~/Downloads/toolstab.config.json
 ```
 
-### 7.2 📌 Gnome Dock and App Grid
+### 6.2 📌 Gnome Dock and App Grid
 
 Set the Dock Favorite Apps:
 ```sh
@@ -206,7 +206,7 @@ Remove folders:
 gsettings set org.gnome.desktop.app-folders folder-children "[]"
 ```
 
-### 7.3 ⚙️ Settings
+### 6.3 ⚙️ Settings
 
 Settings -> Display: manually adjust `Resolution` and `Refresh Rate`.
 
@@ -287,7 +287,7 @@ Disable `NetworkManager-wait-online.service`:
 sudo systemctl disable NetworkManager-wait-online.service
 ```
 
-### 7.4 🗄️ Files
+### 6.4 🗄️ Files
 
 Change the default zoom level:
 ```sh
@@ -301,7 +301,7 @@ gio set ~/Projects metadata::custom-icon-name "folder-code"
 echo "file://$HOME/Projects Projects" >> ~/.config/gtk-3.0/bookmarks
 ```
 
-### 7.5 🌐 Configure DNS
+### 6.5 🌐 Configure DNS
 
 Change DNS:
 ```sh
@@ -319,7 +319,7 @@ sudo nmcli con up "$(nmcli -g NAME con show --active | head -1)"
 > nmcli con show "$(nmcli -g NAME con show --active | head -1)" | grep DNS
 > ```
 
-### 7.6 🎨 UI and Appearance
+### 6.6 🎨 UI and Appearance
 
 Set `Style` to `Dark`:
 ```sh
@@ -350,9 +350,9 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folde
 papirus-folders -C bluegrey --theme Papirus-Dark
 ```
 
-## 8. 📱 Apps configuration
+## 7. 📱 Apps configuration
 
-### 8.1 🦊 Firefox
+### 7.1 🦊 Firefox
 
 Login into Firefox to automatically sync and install the following extensions:
 - **GNOME Shell Integration**
@@ -380,11 +380,11 @@ rm ~/Downloads/toolstab.config.json
 
 In the **Dark Reader** settings, go to `Configure website toggling` and disable `Enabled by Default`.
 
-### 8.2 📧 Thunderbird
+### 7.2 📧 Thunderbird
 
 Open **Thunderbird** and add the email accounts.
 
-### 8.3 🐙 Configure Git + GitHub
+### 7.3 🐙 Configure Git + GitHub
 
 Configure **Git**:
 ```sh
@@ -397,7 +397,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Then copy the SSH key and [add it to GitHub](https://github.com/settings/ssh/new).
 
-### 8.4 🐚 Configure Zsh
+### 7.4 🐚 Configure Zsh
 
 Install **Oh My Zsh** using this script:
 ```sh
@@ -417,7 +417,7 @@ cd ~
 > [!TIP]
 > Close and re-open the terminal to apply the shell change.
 
-### 8.5 🧩 Gnome Shell Extensions
+### 7.5 🧩 Gnome Shell Extensions
 
 Disable `Background Logo` and enable `GPaste`:
 ```sh
@@ -441,7 +441,7 @@ gnome-extensions disable Vitals@CoreCoding.com
 gnome-extensions enable Vitals@CoreCoding.com
 ```
 
-### 8.6 📝 Zed
+### 7.6 📝 Zed
 
 Press `Ctrl`+`Alt`+`,` and replace the content with the following settings:
 ```json
@@ -499,19 +499,19 @@ Login using the **Github Account**.
 
 Press `Ctrl`+`Alt`+`B`, then `Ctrl`+`Alt`+`C` and configure **Github Copilot Chat**.
 
-### 8.7 📄 TeXstudio
+### 7.7 📄 TeXstudio
 
 Options -> Configure TeXstudio -> General: set `Style` to `Adwaita Dark (txs)`
 
 Options -> Configure TeXstudio -> Build: set `Default Bibliography Tool` to `Biber`
 
-### 8.8 📊 JupyterLab
+### 7.8 📊 JupyterLab
 
 Enable `Dark Reader` Extension for JupyterLab.
 
 ---
 
-## 9. 🔁 Final Reboot
+## 8. 🔁 Final Reboot
 
 Reboot the system:
 ```sh
