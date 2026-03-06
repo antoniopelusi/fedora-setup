@@ -515,7 +515,16 @@ Enable `Dark Reader` Extension for JupyterLab.
 
 ---
 
-## 8. 🔁 Final Reboot
+## 8. 🧹 Cleanup
+
+Cleanup unused dependencies:
+```sh
+sudo dnf -y autoremove
+sudo dnf -y clean all
+flatpak -y uninstall --unused
+```
+
+## 9. 🔁 Final Reboot
 
 Reboot the system:
 ```sh
