@@ -24,7 +24,7 @@ flatpak -y update
 
 # Update the Firmware:
 sudo fwupdmgr refresh --force
-sudo fwupdmgr update
+sudo fwupdmgr -y update
 
 # Install dnf packages:
 sudo dnf -y install \
@@ -266,7 +266,7 @@ git config --global user.email "antoniopelusi2000@gmail.com"
 git config --global core.editor vim
 
 # Generate key for Github:
-ssh-keygen -t ed25519 -C "antoniopelusi2000@gmail.com"
+ssh-keygen -t ed25519 -C "antoniopelusi2000@gmail.com" -f ~/.ssh/id_ed25519 -N ""
 cat ~/.ssh/id_ed25519.pub
 ```
 
