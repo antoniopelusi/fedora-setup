@@ -17,8 +17,8 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ```
 
 Update **AppStream** metadata:
-[!NOTE]
-Updates AppStream metadata for RPM Fusion, so packages appear correctly in **Gnome Software**.
+> [!NOTE]
+> Updates AppStream metadata for RPM Fusion, so packages appear correctly in **Gnome Software**.
 ```sh
 sudo dnf -y group upgrade core
 ```
