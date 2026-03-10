@@ -11,10 +11,11 @@ sudo dnf -y install \
   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Enable Flathub Third Party Repositories:
+flatpak remote-delete fedora
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Update AppStream metadata:
-sudo dnf -y group upgrade core
+sudo dnf -y install rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data
 
 # Update dnf packages:
 sudo dnf -y update --refresh
@@ -28,7 +29,7 @@ sudo fwupdmgr -y update
 
 # Install dnf packages:
 sudo dnf -y install \
-  zsh vim-enhanced gcc-c++ python3-pip fuse-libs pandoc fastfetch 7zip-standalone-all \
+  zsh vim-enhanced gcc-c++ python3-pip fuse fuse-libs pandoc fastfetch 7zip-standalone-all \
   thunderbird chromium transmission inkscape audacity jupyterlab texstudio texlive-scheme-full \
   gnome-extensions-app gnome-tweaks papirus-icon-theme f42-backgrounds-gnome gpaste gnome-shell-extension-gpaste \
   libfreeaptx libldac fdk-aac
@@ -73,14 +74,6 @@ On the next boot **MOK Management** is launched:
 # Install the driver and the CUDA library and enable nvidia-modeset:
 sudo dnf -y install akmod-nvidia xorg-x11-drv-nvidia-cuda libva-nvidia-driver
 sudo grubby --update-kernel=ALL --args="nvidia-drm.modeset=1"
-
-# Install full ffmpeg and Additional Codecs:
-sudo dnf -y swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf -y update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-
-# Enable OpenH264 for Firefox
-sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
-sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 ```
 
 > [!CAUTION]
@@ -101,16 +94,30 @@ sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 > lscpu | grep "Model name"
 > ```
 
+```sh
+# Vulkan and basic acceleration (AMD & Intel):
+sudo dnf -y install mesa-vulkan-drivers vulkan-loader mesa-libGLU
+```
+
 - For **Intel CPU**:
   ```sh
   sudo dnf -y swap libva-intel-media-driver intel-media-driver --allowerasing
-  sudo dnf -y install libva-intel-driver
   ```
 - For **AMD CPU**:
   ```sh
   sudo dnf -y swap mesa-va-drivers mesa-va-drivers-freeworld
   sudo dnf -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
   ```
+
+```sh
+# Install full ffmpeg and Additional Codecs:
+sudo dnf -y swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf -y update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+
+# Enable OpenH264 for Firefox
+sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+```
 
 ---
 
