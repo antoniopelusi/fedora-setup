@@ -97,6 +97,14 @@ sudo grubby --update-kernel=ALL --args="nvidia-drm.modeset=1"
 ```sh
 # Vulkan and basic acceleration (AMD & Intel):
 sudo dnf -y install mesa-vulkan-drivers vulkan-loader mesa-libGLU
+
+# Install full ffmpeg and Additional Codecs:
+sudo dnf -y swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf -y update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+
+# Enable OpenH264 for Firefox
+sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 ```
 
 - For **Intel CPU**:
@@ -108,16 +116,6 @@ sudo dnf -y install mesa-vulkan-drivers vulkan-loader mesa-libGLU
   sudo dnf -y swap mesa-va-drivers mesa-va-drivers-freeworld
   sudo dnf -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
   ```
-
-```sh
-# Install full ffmpeg and Additional Codecs:
-sudo dnf -y swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf -y update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-
-# Enable OpenH264 for Firefox
-sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
-sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
-```
 
 ---
 
