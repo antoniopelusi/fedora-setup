@@ -106,7 +106,7 @@ sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 
 # Install Bluetooth codecs:
-libfreeaptx libldac fdk-aac
+sudo dnf -y install libfreeaptx libldac fdk-aac
 ```
 
 - For **Intel CPU**:
