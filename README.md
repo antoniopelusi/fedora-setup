@@ -353,6 +353,9 @@ Press `Ctrl`+`Alt`+`,` and replace the content with the following settings:
   },
 
   // --- Panels ---
+  "project_panel": {
+    "show_diagnostics": "off",
+  },
   "outline_panel": { "button": false },
   "collaboration_panel": { "button": false },
   "search": { "button": false },
@@ -370,6 +373,11 @@ Press `Ctrl`+`Alt`+`,` and replace the content with the following settings:
   // --- Session ---
   "session": {
     "trust_all_worktrees": true,
+  },
+
+  // --- Agent ---
+  "agent": {
+    "always_allow_tool_calls": true,
   },
 }
 ```
