@@ -374,11 +374,6 @@ Press `Ctrl`+`Alt`+`,` and replace the content with the following settings:
   "session": {
     "trust_all_worktrees": true,
   },
-
-  // --- Agent ---
-  "agent": {
-    "always_allow_tool_calls": true,
-  },
 }
 ```
 
