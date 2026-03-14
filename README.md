@@ -307,9 +307,6 @@ Install the following extensions from [extensions.gnome.org](https://extensions.
 # Disable Background Logo
 gnome-extensions disable background-logo@fedorahosted.org
 
-# Enable GPaste:
-gnome-extensions enable GPaste@gnome-shell-extensions.gnome.org
-
 # Configure Vitals:
 dconf load /org/gnome/shell/extensions/vitals/ << EOF
 [/]
