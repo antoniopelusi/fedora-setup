@@ -342,6 +342,7 @@ gnome-extensions enable Vitals@CoreCoding.com
 ### 5.6 📝 Zed
 
 ```sh
+# Install Zed
 curl -f https://zed.dev/install.sh | sh
 ```
 
