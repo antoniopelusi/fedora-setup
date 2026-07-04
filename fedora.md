@@ -34,7 +34,7 @@ sudo dnf -y install \
   gnome-browser-connector gnome-extensions-app gnome-tweaks papirus-icon-theme f42-backgrounds-gnome
 
 # Install flatpak packages:
-flatpak -y install flathub dev.zed.Zed org.upscayl.Upscayl
+flatpak -y install flathub org.upscayl.Upscayl
 ```
 
 ---
@@ -341,6 +341,16 @@ gnome-extensions enable Vitals@CoreCoding.com
 
 ### 5.6 📝 Zed
 
+```sh
+curl -f https://zed.dev/install.sh | sh
+```
+
+```sh
+# Change zed icon
+cp ~/.local/share/applications/dev.zed.Zed.desktop ~/.local/share/applications/.dev.zed.Zed.backup
+sed -i 's|^Icon=.*|Icon=zed|' ~/.local/share/applications/dev.zed.Zed.desktop
+```
+
 Press `Ctrl`+`Alt`+`,` and replace the content with the following settings:
 ```json
 {
@@ -420,8 +430,21 @@ curl -fsSL https://ollama.com/install.sh | sh
 # Start process
 sudo systemctl enable --now ollama
 
-# Pull model
-ollama run hf.co/bartowski/Qwen_Qwen3.5-4B-GGUF:Q4_K_M
+# Pull the blob
+mkdir -p ~/gguf-models/qwen3.5-4b
+cd ~/gguf-models/qwen3.5-4b
+curl -L -C - -O https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF/resolve/main/Qwen_Qwen3.5-4B-Q4_K_M.gguf
+
+# Create the Modelfile
+cat > Modelfile << 'EOF'
+FROM ./Qwen_Qwen3.5-4B-Q4_K_M.gguf
+EOF
+
+# Create the Ollama model
+ollama create qwen3.5-4b -f Modelfile
+
+# Delete the blob
+rm -rf ~/gguf-models
 ```
 
 ---
