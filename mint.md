@@ -47,8 +47,9 @@ gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Aqua'
 
 Set the following pinned app order:
 1. Firefox
-2. Files
-3. Terminal
+2. Thunderbird
+3. Files
+4. Terminal
 
 ### 4. 🦊 Configure Firefox
 
