@@ -126,9 +126,9 @@ sudo dnf -y install libfreeaptx libldac fdk-aac
 ```sh
 # Download the required files:
 curl -L \
-  https://raw.githubusercontent.com/antoniopelusi/fedora-setup/main/files/AntonioPelusi.png -o ~/Downloads/AntonioPelusi.png \
-  https://raw.githubusercontent.com/antoniopelusi/fedora-setup/main/files/firma.png -o ~/Templates/firma.png \
-  https://raw.githubusercontent.com/antoniopelusi/fedora-setup/main/files/toolstab.config.json -o ~/Downloads/toolstab.config.json
+  https://raw.githubusercontent.com/antoniopelusi/linux-setup/main/files/AntonioPelusi.png -o ~/Downloads/AntonioPelusi.png \
+  https://raw.githubusercontent.com/antoniopelusi/linux-setup/main/files/firma.png -o ~/Templates/firma.png \
+  https://raw.githubusercontent.com/antoniopelusi/linux-setup/main/files/toolstab.config.json -o ~/Downloads/toolstab.config.json
 
 # Set the Dock Favorite Apps:
 gsettings set org.gnome.shell favorite-apps "[]"
