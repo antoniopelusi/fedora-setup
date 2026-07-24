@@ -16,7 +16,84 @@ sudo apt -y install vim zsh git
 
 ---
 
-## 2. ⚙️ Settings
+## 2. 📝 Zed
+
+```sh
+# Install Zed
+curl -f https://zed.dev/install.sh | sh
+```
+
+Press `Ctrl`+`Alt`+`,` and replace the content with the following settings:
+```json
+{
+  // --- AI ---
+  "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
+  },
+  "edit_predictions": {
+    "provider": "none",
+  },
+
+  // --- Git ---
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "git_panel": { "button": false },
+
+  // --- Toolbar ---
+  "toolbar": {
+    "selections_menu": false,
+  },
+  "gutter": {
+    "runnables": false,
+  },
+
+  // --- Tabs ---
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+  },
+
+  // --- Panels ---
+  "project_panel": {
+    "dock": "left",
+    "show_diagnostics": "off",
+  },
+  "outline_panel": { "button": false },
+  "collaboration_panel": { "button": false },
+  "search": { "button": false },
+  "diagnostics": { "button": false },
+  "debugger": { "button": false },
+  "global_lsp_settings": { "button": false },
+
+  // --- Privacy ---
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // --- Session ---
+  "session": {
+    "trust_all_worktrees": true,
+  },
+
+  // --- CLI ---
+  "cli_default_open_behavior": "new_window",
+}
+```
+
+Install [charmed-icons](https://zed.dev/extensions/charmed-icons) theme.
+
+Login using the **Github Account**.
+
+Press `Ctrl`+`Alt`+`B`, then `Ctrl`+`Alt`+`C` and configure **Github Copilot Chat**.
+
+---
+
+## 3. ⚙️ Settings
 
 ```sh
 # Set background:
